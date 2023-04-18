@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Carlos José Mecha" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora</title>
+  <link rel="stylesheet" type="text/css" href="calc.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1>Calculadora</h1>
+  <div class="wraper">
+    <div id="display">
+      <div id="display1">&nbsp;</div>
+      <div id="display2">&nbsp;</div>
+    </div>
+    <div class="container">
+      <table>
+        <!-- 1st row -->
+        <tr>
+          <td>
+            <button type="button" data-value="AC">AC</button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value="(">
+              (
+            </button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value=")">
+              )
+            </button>
+          </td>
+          <td>
+            <button type="button" data-value="C" title="borrar">
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 96 960 960" width="38" class="deleteIcon">
+                <path
+                  d="m448 730 112-112 112 112 43-43-113-111 111-111-43-43-110 112-112-112-43 43 113 111-113 111 43 43ZM120 576l169-239q13-18 31-29.5t40-11.5h420q24.75 0 42.375 17.625T840 356v440q0 24.75-17.625 42.375T780 856H360q-22 0-40-11.5T289 815L120 576Zm75 0 154 220h431V356H349L195 576Zm585 0V356v440-220Z" />
+              </svg>
+            </button>
+          </td>
+        </tr>
+        <!-- 2nd row -->
+        <tr>
+          <td>
+            <button type="button" class="function redButton" data-value="PI">π</button>
+          </td>
+          <td>
+            <button type="button" class="function btnOper redButton" data-value="e">
+              e
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function redButton" data-value="PHI">φ</button>
+          </td>
+          <td>
+            <button type="button" class="function redButton" data-value="TAU">
+              τ
+            </button>
+          </td>
+        </tr>
+        <!-- 3rd row -->
+        <tr>
+          <td>
+            <button type="button" class="function btnOper redButton" data-value="deg">
+              deg
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function btnOper redButton" data-value="cos">
+              cos
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function btnOper redButton" data-value="sin">
+              sin
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function btnOper redButton" data-value="tan">
+              tan
+            </button>
+          </td>
+        </tr>
+        <!-- 4th row -->
+        <tr>
+          <td>
+            <button type="button" class="function" data-value="log10">
+              log
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function" data-value="log">
+              ln
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function" data-value="log2">
+              log<sub>2</sub>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function" data-value="!">
+              !
+            </button>
+          </td>
+
+        </tr>
+        <!-- 5th row -->
+        <tr>
+          <td>
+            <button type="button" class="function" data-value="sqrt">
+              √
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function" data-value="^2">
+              x²
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function" data-value="^3">
+              x³
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function" data-value="^">^</button>
+          </td>
+        </tr>
+        <!-- 6th row -->
+        <tr>
+          <td>
+            <button type="button" class="value" data-value="7">7</button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value="8">8</button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value="9">9</button>
+          </td>
+          <td>
+            <button type="button" class="value btnOper redButton" data-value="/">
+              ÷
+            </button>
+          </td>
+        </tr>
+        <!-- 7th row -->
+        <tr>
+          <td>
+            <button type="button" class="value" data-value="4">4</button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value="5">5</button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value="6">6</button>
+          </td>
+          <td>
+            <button type="button" class="value btnOper redButton" data-value="*">
+              x
+            </button>
+          </td>
+        </tr>
+        <!-- 8th row -->
+        <tr>
+          <td>
+            <button type="button" class="value" data-value="1">1</button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value="2">2</button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value="3">3</button>
+          </td>
+          <td>
+            <button class="value btnOper redButton" data-value="-">-</button>
+          </td>
+        </tr>
+        <!-- 9th row -->
+        <tr>
+          <td>
+            <button type="button" class="value" data-value="0">0</button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value=".">
+              .
+            </button>
+          </td>
+          <td>
+            <button type="button" class="value" data-value="CE">
+              CE
+            </button>
+          </td>
+          <td>
+            <button type="button" class="value btnOper redButton" data-value="+">
+              +
+            </button>
+          </td>
+        </tr>
+        <!-- 10th row -->
+        <tr>
+          <td>
+            <button type="button" class="function btnOper redButton" data-value="rand">
+              Rand
+            </button>
+          </td>
+          <td>
+            <button type="button" class="function btnOper redButton" data-value="ans">
+              Ans
+            </button>
+          </td>
+          <td colspan="2">
+            <button id="buttonSolve" type="button" data-value="=">=</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <!-- Math js -->
+  <script src="mathjs\math.js"></script>
+  <script src="calc_1.3.js"></script>
+
+</body>
+
+</html>
