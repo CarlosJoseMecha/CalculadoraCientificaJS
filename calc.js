@@ -418,9 +418,11 @@
 
   function handleButtonClick(event) {
     var target = event.target;
+    // Busca el elemento button más cercano en la jerarquía del DOM - Fix para el icono de la tecla borrar.
     while (target && target.tagName !== "BUTTON") {
       target = target.parentElement;
     }
+
     if (!target) return;
     var value = target.getAttribute("data-value");
     if (specialActionsController.hasOwnProperty(value)) {
